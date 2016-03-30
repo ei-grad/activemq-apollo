@@ -266,7 +266,7 @@ class AmqpProtocolHandler extends ProtocolHandler {
 
     override def processSaslConnect(protonTransport: TransportImpl) = {
       val sasl = protonTransport.sasl();
-      sasl.setMechanisms(Array("ANONYMOUS", "PLAIN"));
+      sasl.setMechanisms(Array("PLAIN", "ANONYMOUS"));
       sasl.server();
       sasl
     }
